@@ -1,0 +1,206 @@
+# ═══════════════════════════════════════════════════════════
+#  SmVnc - Git Ignore Rules
+#  Author : Sazid Mehmud (t.me/SmMehmudTg18)
+#  Repo   : github.com/SazidMehmud/SmVnc
+# ═══════════════════════════════════════════════════════════
+
+# ─────────────────────────────────────────────
+# 🚫 USER DATA (সবচেয়ে গুরুত্বপূর্ণ - কখনো পুশ হবে না)
+# ─────────────────────────────────────────────
+data/
+data/**
+!data/.gitkeep
+
+# ─────────────────────────────────────────────
+# 🚫 LOGS (রানটাইমে তৈরি হয়, রেপোতে দরকার নেই)
+# ─────────────────────────────────────────────
+logs/
+logs/**
+*.log
+*.log.*
+
+# ─────────────────────────────────────────────
+# 🚫 LOCAL CONFIG (প্রত্যেক মেশিনে আলাদা হবে)
+# ─────────────────────────────────────────────
+config/users.conf
+config/*.conf
+!config/users.conf.example
+
+# ─────────────────────────────────────────────
+# 🚫 BUILD ARTIFACTS (Docker/Podman related)
+# ─────────────────────────────────────────────
+*.tar
+*.tar.gz
+*.zip
+*.img
+*.qcow2
+
+# ─────────────────────────────────────────────
+# 🚫 TEMPORARY FILES
+# ─────────────────────────────────────────────
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+*.old
+*.orig
+
+# ─────────────────────────────────────────────
+# 🚫 RUNTIME FILES (স্ক্রিপ্ট চলার সময় তৈরি হবে)
+# ─────────────────────────────────────────────
+*.pid
+*.lock
+*.socket
+*.sock
+.run/
+.pid/
+
+# ─────────────────────────────────────────────
+# 🚫 ENVIRONMENT & SECRETS (কখনো পুশ করবে না!)
+# ─────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.crt
+secrets/
+credentials/
+*.password
+
+# ─────────────────────────────────────────────
+# 🚫 OS GENERATED FILES
+# ─────────────────────────────────────────────
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+*.kate-swp
+
+# ─────────────────────────────────────────────
+# 🚫 IDE / EDITOR FILES
+# ─────────────────────────────────────────────
+# VS Code
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json.example
+
+# JetBrains (IntelliJ, PyCharm, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+*.vim
+.viminfo
+.vim/
+
+# Nano
+*.save
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ─────────────────────────────────────────────
+# 🚫 PYTHON (ভবিষ্যতে Python স্ক্রিপ্ট যোগ করলে)
+# ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+env/
+
+# ─────────────────────────────────────────────
+# 🚫 NODE.JS (ভবিষ্যতে Web GUI বানালে)
+# ─────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.npm
+.yarn/
+dist/
+build/
+
+# ─────────────────────────────────────────────
+# 🚫 BACKUP FILES
+# ─────────────────────────────────────────────
+*.backup
+*_backup/
+*_old/
+backup/
+
+# ─────────────────────────────────────────────
+# 🚫 COMPRESSED / ARCHIVE (ইউজার নিজে তৈরি করলে)
+# ─────────────────────────────────────────────
+*.7z
+*.rar
+*.gz
+*.bz2
+*.xz
+*.tgz
+
+# ─────────────────────────────────────────────
+# 🚫 TEST FILES (লোকালে টেস্ট করার জন্য)
+# ─────────────────────────────────────────────
+test/
+tests/
+*.test
+*.spec
+coverage/
+.coverage
+htmlcov/
+
+# ─────────────────────────────────────────────
+# 🚫 CACHE
+# ─────────────────────────────────────────────
+.cache/
+.cache/**
+*.cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# ─────────────────────────────────────────────
+# ✅ KEEP THESE (ফাঁকা ফোল্ডার Git-এ রাখতে)
+# ─────────────────────────────────────────────
+!data/.gitkeep
+!logs/.gitkeep
