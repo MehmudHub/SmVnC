@@ -1,83 +1,90 @@
 # ═══════════════════════════════════════════════════════════
 #  SmVnc - Git Ignore Rules
 #  Author : Sazid Mehmud (t.me/SmMehmudTg18)
-#  Repo   : github.com/SazidMehmud/SmVnc
+#  Repo   : github.com/MehmudHub/SmVnc
 # ═══════════════════════════════════════════════════════════
 
-# ─────────────────────────────────────────────
-# 🚫 USER DATA (সবচেয়ে গুরুত্বপূর্ণ - কখনো পুশ হবে না)
-# ─────────────────────────────────────────────
-data/
-data/**
+# ─── 🚫 USER DATA (কখনো পুশ হবে না) ───
+# data/ এর বদলে data/* ব্যবহার করা হয়েছে যাতে !data/.gitkeep কাজ করে
+data/*
 !data/.gitkeep
 
-# ─────────────────────────────────────────────
-# 🚫 LOGS (রানটাইমে তৈরি হয়, রেপোতে দরকার নেই)
-# ─────────────────────────────────────────────
-logs/
-logs/**
+# ─── 🚫 LOGS ───
+logs/*
+!logs/.gitkeep
 *.log
 *.log.*
 
-# ─────────────────────────────────────────────
-# 🚫 LOCAL CONFIG (প্রত্যেক মেশিনে আলাদা হবে)
-# ─────────────────────────────────────────────
+# ─── 🚫 LOCAL CONFIG (প্রত্যেক মেশিনে আলাদা) ───
 config/users.conf
-config/*.conf
+config/*.local
+config/*.bak
 !config/users.conf.example
 
-# ─────────────────────────────────────────────
-# 🚫 BUILD ARTIFACTS (Docker/Podman related)
-# ─────────────────────────────────────────────
-*.tar
-*.tar.gz
-*.zip
-*.img
-*.qcow2
-
-# ─────────────────────────────────────────────
-# 🚫 TEMPORARY FILES
-# ─────────────────────────────────────────────
-*.tmp
-*.temp
-*.swp
-*.swo
-*~
-*.bak
-*.old
-*.orig
-
-# ─────────────────────────────────────────────
-# 🚫 RUNTIME FILES (স্ক্রিপ্ট চলার সময় তৈরি হবে)
-# ─────────────────────────────────────────────
-*.pid
-*.lock
-*.socket
-*.sock
-.run/
-.pid/
-
-# ─────────────────────────────────────────────
-# 🚫 ENVIRONMENT & SECRETS (কখনো পুশ করবে না!)
-# ─────────────────────────────────────────────
+# ─── 🚫 SECRETS & ENV (কখনো পুশ করবে না!) ───
 .env
 .env.*
 !.env.example
 *.key
 *.pem
 *.crt
+*.p12
 secrets/
 credentials/
 *.password
+*_rsa
+*_ed25519
+id_rsa*
+id_ed25519*
 
-# ─────────────────────────────────────────────
-# 🚫 OS GENERATED FILES
-# ─────────────────────────────────────────────
+# ─── 🚫 RUNTIME FILES ───
+*.pid
+*.lock
+*.socket
+*.sock
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.old
+*.orig
+.run/
+.pid/
+
+# ─── 🚫 BUILD ARTIFACTS ───
+*.tar
+*.tar.gz
+*.zip
+*.img
+*.qcow2
+dist/
+build/
+out/
+
+# ─── 🚫 ARCHIVES ───
+*.7z
+*.rar
+*.gz
+*.bz2
+*.xz
+*.tgz
+
+# ─── 🚫 BACKUP FILES ───
+*.backup
+*_backup/
+*_old/
+backup/
+bkp/
+
+# ─── 🚫 OS GENERATED FILES ───
 # macOS
 .DS_Store
 .AppleDouble
 .LSOverride
 ._*
+.Spotlight-V100
+.Trashes
 
 # Windows
 Thumbs.db
@@ -91,16 +98,14 @@ $RECYCLE.BIN/
 .directory
 .Trash-*
 *.kate-swp
+*~
 
-# ─────────────────────────────────────────────
-# 🚫 IDE / EDITOR FILES
-# ─────────────────────────────────────────────
+# ─── 🚫 IDE / EDITOR FILES ───
 # VS Code
 .vscode/
 !.vscode/extensions.json
-!.vscode/settings.json.example
 
-# JetBrains (IntelliJ, PyCharm, etc.)
+# JetBrains
 .idea/
 *.iml
 *.ipr
@@ -118,26 +123,12 @@ $RECYCLE.BIN/
 *.sublime-project
 *.sublime-workspace
 
-# ─────────────────────────────────────────────
-# 🚫 PYTHON (ভবিষ্যতে Python স্ক্রিপ্ট যোগ করলে)
-# ─────────────────────────────────────────────
+# ─── 🚫 PYTHON (ভবিষ্যতের জন্য) ───
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -145,10 +136,14 @@ wheels/
 venv/
 ENV/
 env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.coverage
+htmlcov/
 
-# ─────────────────────────────────────────────
-# 🚫 NODE.JS (ভবিষ্যতে Web GUI বানালে)
-# ─────────────────────────────────────────────
+# ─── 🚫 NODE.JS (ভবিষ্যতে Web GUI বানালে) ───
 node_modules/
 npm-debug.log*
 yarn-debug.log*
@@ -156,51 +151,19 @@ yarn-error.log*
 .pnpm-debug.log*
 .npm
 .yarn/
-dist/
-build/
 
-# ─────────────────────────────────────────────
-# 🚫 BACKUP FILES
-# ─────────────────────────────────────────────
-*.backup
-*_backup/
-*_old/
-backup/
+# ─── 🚫 CACHE ───
+.cache/
+*.cache
 
-# ─────────────────────────────────────────────
-# 🚫 COMPRESSED / ARCHIVE (ইউজার নিজে তৈরি করলে)
-# ─────────────────────────────────────────────
-*.7z
-*.rar
-*.gz
-*.bz2
-*.xz
-*.tgz
-
-# ─────────────────────────────────────────────
-# 🚫 TEST FILES (লোকালে টেস্ট করার জন্য)
-# ─────────────────────────────────────────────
+# ─── 🚫 TEST FILES ───
 test/
 tests/
 *.test
 *.spec
-coverage/
-.coverage
-htmlcov/
 
-# ─────────────────────────────────────────────
-# 🚫 CACHE
-# ─────────────────────────────────────────────
-.cache/
-.cache/**
-*.cache
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.tox/
-
-# ─────────────────────────────────────────────
-# ✅ KEEP THESE (ফাঁকা ফোল্ডার Git-এ রাখতে)
-# ─────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════
+# ✅ KEEP THESE (ফাঁকা ফোল্ডার Git-এ ট্র্যাক করতে)
+# ═══════════════════════════════════════════════════════════
 !data/.gitkeep
 !logs/.gitkeep
